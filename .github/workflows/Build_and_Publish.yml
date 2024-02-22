@@ -78,6 +78,14 @@ jobs:
           quay.io/${{env.QUAYIO_ORG}}/${{env.IMAGE_NAME_PREFIX}}_${{ matrix.IMAGE }}:${{env.DOCKER_TAG}}
           quay.io/${{env.QUAYIO_ORG}}/${{env.IMAGE_NAME_PREFIX}}_${{ matrix.IMAGE }}:latest
 
+    - name: Make repo public
+      if: ${{ startsWith(github.ref, 'refs/heads/main') || startsWith(github.ref, 'refs/tags/v') }}
+      run: |
+        curl -X POST https://quay.io//api/v1/repository/${{env.QUAYIO_ORG}}/${{env.IMAGE_NAME_PREFIX}}_${{ matrix.IMAGE }}/changevisibility \
+        -H 'Authorization: Bearer ${{secrets.QUAY_API_TOKEN}}' \
+        -H 'Content-Type: application/json' \
+        -d '{"visibility": "public"}'
+
     - name: Inspect Image
       if: ${{ startsWith(github.ref, 'refs/heads/main') }}
       run: |
