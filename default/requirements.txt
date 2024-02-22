@@ -1,5 +1,6 @@
 cmocean
 curl
+echopype
 opencv
 owslib
 rasterio
