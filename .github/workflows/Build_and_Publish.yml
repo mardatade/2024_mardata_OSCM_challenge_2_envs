@@ -62,14 +62,14 @@ jobs:
         context: ${{ matrix.IMAGE }}
         push: true
         tags: |
-          quay.io/${{env.QUAYIO_ORG}}/${IMAGE_NAME_PREFIX}_${{ matrix.IMAGE }}:main
-          quay.io/${{env.QUAYIO_ORG}}/${IMAGE_NAME_PREFIX}_${{ matrix.IMAGE }}:${{env.DOCKER_TAG}}
+          quay.io/${{env.QUAYIO_ORG}}/${{env.IMAGE_NAME_PREFIX}}_${{ matrix.IMAGE }}:main
+          quay.io/${{env.QUAYIO_ORG}}/${{env.IMAGE_NAME_PREFIX}}_${{ matrix.IMAGE }}:${{env.DOCKER_TAG}}
 
     - name: Inspect Image
       run: |
-        docker run $quay.io/${{env.QUAYIO_ORG}}/${IMAGE_NAME_PREFIX}_${{ matrix.IMAGE }}:main conda list
+        docker run $quay.io/${{env.QUAYIO_ORG}}/${{env.IMAGE_NAME_PREFIX}}_${{ matrix.IMAGE }}:main conda list
         docker images ls
 
     - name: Test Image
       run: |
-        docker run -u 1000 -w /srv/test -v $PWD:/srv/test quay.io/${{env.QUAYIO_ORG}}/${IMAGE_NAME_PREFIX}_${{ matrix.IMAGE }}:main ./run_tests.sh ${{ matrix.IMAGE }}
+        docker run -u 1000 -w /srv/test -v $PWD:/srv/test quay.io/${{env.QUAYIO_ORG}}/${{env.IMAGE_NAME_PREFIX}}_${{ matrix.IMAGE }}:main ./run_tests.sh ${{ matrix.IMAGE }}
