@@ -1,0 +1,6 @@
+cmocean
+curl
+opencv
+owslib
+rasterio
+utm

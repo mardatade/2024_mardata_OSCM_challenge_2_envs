@@ -1,1 +1,1 @@
-# 2024_mardata_OSCM_challenge_2_envs
+# 2024 MarDATA@OSCM Challenge 2 Environments
