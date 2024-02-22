@@ -67,7 +67,7 @@ jobs:
 
     - name: Inspect Image
       run: |
-        docker run $quay.io/${{env.QUAYIO_ORG}}/${{env.IMAGE_NAME_PREFIX}}_${{ matrix.IMAGE }}:main conda list
+        docker run quay.io/${{env.QUAYIO_ORG}}/${{env.IMAGE_NAME_PREFIX}}_${{ matrix.IMAGE }}:main conda list
         docker images ls
 
     - name: Test Image
