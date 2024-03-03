@@ -1,9 +1,14 @@
 FROM quay.io/pangeo/pangeo-notebook:2023.10.28
 
 # Install requirements using conda (mamba)
-COPY requirements.txt /tmp/requirements.txt
-RUN mamba install -y -n notebook -c conda-forge --file /tmp/requirements.txt && \
+COPY requirements_conda.txt /tmp/requirements_conda.txt
+RUN mamba install -y -n notebook -c conda-forge --file /tmp/requirements_conda.txt && \
     mamba clean --all --yes
+
+# Install requirements using pip
+COPY requirements_pip.txt /tmp/requirements_pip.txt
+RUN python -m pip install --no-cache-dir -r/tmp/requirements_pip.txt \
+    && rm -Rf /root/.cache/pip
 
 USER root
 
