@@ -1,4 +1,5 @@
 cmocean
+copernicusmarine
 curl
 echopype
 opencv
