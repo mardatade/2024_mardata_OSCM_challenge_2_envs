@@ -12,6 +12,15 @@ on:
       - 'Makefile'
       - 'environment-condalock.yml'
       - 'update_lockfile.sh'
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - 'LICENSE'
+      - 'README.md'
+      - 'Makefile'
+      - 'environment-condalock.yml'
+      - 'update_lockfile.sh'
 
 env:
   QUAYIO_ORG: mardatade
