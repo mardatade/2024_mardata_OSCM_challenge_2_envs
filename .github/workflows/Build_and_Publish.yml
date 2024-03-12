@@ -96,6 +96,7 @@ jobs:
         -d '{"visibility": "public"}'
 
     - name: Inspect Image
+      continue-on-error: true
       if: ${{ startsWith(github.ref, 'refs/heads/main') }}
       run: |
         docker run quay.io/${{env.QUAYIO_ORG}}/${{env.IMAGE_NAME_PREFIX}}_${{ matrix.IMAGE }}:main conda list
