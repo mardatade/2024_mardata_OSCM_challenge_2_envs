@@ -33,7 +33,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        IMAGE: [default, ]
+        IMAGE: [default, ch2pyr423]
     name: ${{ matrix.IMAGE }}
     runs-on: ubuntu-latest
     steps:
