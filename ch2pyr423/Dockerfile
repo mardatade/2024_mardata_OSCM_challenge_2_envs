@@ -3,6 +3,10 @@ FROM rocker/binder:4.2.3
 
 USER root
 
+RUN apt update \
+ && apt install --no-install-recommends --yes htop \
+ && rm -rf /var/lib/apt/lists/*
+
 ADD install-pkgs.R /install-pkgs.R
 RUN Rscript /install-pkgs.R 1> /dev/null
 
