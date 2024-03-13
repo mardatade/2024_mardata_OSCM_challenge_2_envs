@@ -2,11 +2,13 @@
 cpus <- parallel::detectCores()
 options(Ncpus = cpus)
 
-pkgs <- c ("rdrop2", "DT", "rclipboard", "imager", "shinymaterial", "shinyalert", "shinycssloaders", "shinyjs")
+pkgs <- c ("rdrop2", "DT", "rclipboard", "imager", "shinymaterial", "shinyalert", "shinycssloaders", "shinyjs", "rsconnect")
 
 install.packages(pkgs, dependencies = TRUE, clean = TRUE)
 
-verify_pkgs <- pkgs
+remotes::install_github("nstrayer/shinysense")
+
+verify_pkgs <- c(pkgs, "shinysense")
 
 for (pkg in verify_pkgs) {
     if ( ! library(pkg, character.only=TRUE, logical.return=TRUE) ) {
