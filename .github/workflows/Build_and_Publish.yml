@@ -33,7 +33,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        IMAGE: [default, ch1pyr423, springschool_py]
+        IMAGE: [default, ch1pyr423, springschool_py, springschool_r]
     name: ${{ matrix.IMAGE }}
     runs-on: ubuntu-latest
     steps:
