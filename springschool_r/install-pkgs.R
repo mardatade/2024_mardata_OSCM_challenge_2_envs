@@ -2,7 +2,7 @@
 cpus <- parallel::detectCores()
 options(Ncpus = cpus)
 
-pkgs <- c ("RNetCDF", "fields", "xml", "rlist", "R.utils")
+pkgs <- c ("RNetCDF", "fields", "rlist", "R.utils")
 install.packages(pkgs, dependencies = TRUE, clean = TRUE)
 
 install.packages("osmose", repo="https://osmose-model.github.io/drat/")
