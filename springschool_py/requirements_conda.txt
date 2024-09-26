@@ -1,7 +1,6 @@
 aospy
 cartopy
 cdo
-cf_units
 cftime
 cmocean
 cmocean
