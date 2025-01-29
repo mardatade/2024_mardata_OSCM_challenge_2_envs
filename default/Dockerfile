@@ -1,4 +1,4 @@
-FROM quay.io/pangeo/pangeo-notebook:2023.10.28
+FROM quay.io/pangeo/pangeo-notebook:2025.01.10
 
 USER root
 
