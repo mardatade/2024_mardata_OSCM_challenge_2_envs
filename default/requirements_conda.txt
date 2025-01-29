@@ -5,3 +5,9 @@ opencv
 owslib
 rasterio
 utm
+xclim
+statsmodels
+xoak
+papermill
+regionmask
+cdsapi
