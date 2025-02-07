@@ -2,7 +2,7 @@
 cpus <- parallel::detectCores()
 options(Ncpus = cpus)
 
-pkgs <- c ("rdrop2", "DT", "rclipboard", "imager", "shinymaterial", "shinyalert", "shinycssloaders", "shinyjs", "rsconnect")
+pkgs <- c ("extRemes", "plyr", "methods", "copula", "MASS", "abind", "rclipboard", "shinymaterial", "shinyalert", "shinycssloaders", "shinyjs", "rsconnect")
 
 install.packages(pkgs, dependencies = TRUE, clean = TRUE)
 
