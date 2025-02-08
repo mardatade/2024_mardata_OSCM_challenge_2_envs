@@ -15,7 +15,8 @@ ENV TZ=Atlantic/Cape_Verde
 ENV SHELL=/bin/bash
 
 RUN ln -s /home/jovyan/shared_materials/ shared_materials \
- && ln -s /home/jovyan/my_materials/ my_materials
+ && ln -s /home/jovyan/my_materials/ my_materials \
+ && ln -s /home/jovyan/shared_exchange/ shared_exchange
 
 USER rstudio
 
